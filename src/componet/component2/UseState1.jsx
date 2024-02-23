@@ -6,7 +6,7 @@ const UseState1 = () => {
   };
   return (
     <div>
-      <h1>isEmploye:{isEmploye ? "yes" : "no"}</h1>
+      <h1>employee:{isEmploye ? "yes" : "no"}</h1>
       <button onClick={handleClick}>day</button>
     </div>
   );
