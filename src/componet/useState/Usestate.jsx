@@ -13,7 +13,7 @@ const UsestateFunction = () => {
 
   return (
     <div>
-      <p>{count}</p>
+      <p>count:{count}</p>
       <button onClick={handleClick}>click to add number</button>
     </div>
   );
