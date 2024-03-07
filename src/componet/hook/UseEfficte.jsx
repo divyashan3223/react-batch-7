@@ -1,7 +1,7 @@
 //! basic use effect task
 
-import { useEffect } from "react";
-import { useState } from "react";
+// import { useEffect } from "react";
+// import { useState } from "react";
 
 // import React, { useEffect, useState } from "react";
 
@@ -96,7 +96,7 @@ import { useState } from "react";
 //   );
 // };
 
-// export default UseEfficte;88ok
+// export default UseEfficte;
 
 // TODO   count number change and title will change and color will change
 
@@ -125,81 +125,81 @@ import { useState } from "react";
 
 // !window height and width resize value using use effect
 
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
-// const UseEfficte = () => {
-//   const [height, setHeight] = useState(window.innerHeight);
-//   const [width, setWidth] = useState(window.innerWidth);
+const UseEfficte = () => {
+  const [height, setHeight] = useState(window.innerHeight);
+  const [width, setWidth] = useState(window.innerWidth);
 
-//   useEffect(() => {
-//     window.addEventListener("resize", handleResize);
-//     console.log("Event listener added");
-//     return () => {
-//       window.removeEventListener("resize", handleResize);
-//       console.log("Event listener removed");
-//     };
-//   }, [width]);
-//   function handleResize() {
-//     setHeight(window.innerHeight);
-//     setWidth(window.innerWidth);
-//   }
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    console.log("Event listener added");
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      console.log("Event listener removed");
+    };
+  }, [width]);
+  function handleResize() {
+    setHeight(window.innerHeight);
+    setWidth(window.innerWidth);
+  }
 
-//   return (
-//     <>
-//       <p>window height:{height}</p>
-//       <p>window width:{width}</p>
-//     </>
-//   );
-// };
+  return (
+    <>
+      <p>window height:{height}</p>
+      <p>window width:{width}</p>
+    </>
+  );
+};
 
-// export default UseEfficte;
+export default UseEfficte;
 
 // ?real time example in weather report
 
 // import React, { useState, useEffect } from "react";
 
-const WeatherApp = () => {
-  const [weatherData, setWeatherData] = useState(null);
+// const WeatherApp = () => {
+//   const [weatherData, setWeatherData] = useState(null);
 
-  useEffect(() => {
-    const fetchWeatherData = async () => {
-      try {
-        // Fetch weather data from an API
-        const response = await fetch(
-          "https://api.weatherapi.com/forecast.json?key=YOUR_API_KEY&q=London&days=1"
-        );
-        const data = await response.json();
-        // Update the weather data state
-        setWeatherData(data);
-      } catch (error) {
-        console.error("Error fetching weather data:", error);
-      }
-    };
+//   useEffect(() => {
+//     const fetchWeatherData = async () => {
+//       try {
+//         // Fetch weather data from an API
+//         const response = await fetch(
+//           "https://api.weatherapi.com/forecast.json?key=YOUR_API_KEY&q=London&days=1"
+//         );
+//         const data = await response.json();
+//         // Update the weather data state
+//         setWeatherData(data);
+//       } catch (error) {
+//         console.error("Error fetching weather data:", error);
+//       }
+//     };
 
-    // Fetch weather data when the component mounts
-    fetchWeatherData();
+//     // Fetch weather data when the component mounts
+//     fetchWeatherData();
 
-    // Fetch weather data again every 10 minutes
-    const intervalId = setInterval(fetchWeatherData, 10 * 60 * 1000);
+//     // Fetch weather data again every 10 minutes
+//     const intervalId = setInterval(fetchWeatherData, 10 * 60 * 1000);
 
-    // Cleanup function to clear the interval when the component unmounts
-    return () => clearInterval(intervalId);
-  }, []); // Empty dependency array ensures the effect runs only once when the component mounts
+//     // Cleanup function to clear the interval when the component unmounts
+//     return () => clearInterval(intervalId);
+//   }, []); // Empty dependency array ensures the effect runs only once when the component mounts
 
-  return (
-    <div>
-      <h1>Weather App</h1>
-      {weatherData ? (
-        <div>
-          <h2>Current Weather in {weatherData.location.name}</h2>
-          <p>Temperature: {weatherData.current.temp_c}°C</p>
-          <p>Condition: {weatherData.current.condition.text}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
-    </div>
-  );
-};
+//   return (
+//     <div>
+//       <h1>Weather App</h1>
+//       {weatherData ? (
+//         <div>
+//           <h2>Current Weather in {weatherData.location.name}</h2>
+//           <p>Temperature: {weatherData.current.temp_c}°C</p>
+//           <p>Condition: {weatherData.current.condition.text}</p>
+//         </div>
+//       ) : (
+//         <p>Loading...</p>
+//       )}
+//     </div>
+//   );
+// };
 
-export default WeatherApp;
+// export default WeatherApp;
