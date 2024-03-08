@@ -1,13 +1,10 @@
 import "./App.css";
-import UseMemo from "./componet/component2/UseMemo";
-// import UseEffecte from "./componet/useState/UseEffecte";
-
-// import UseRef from "./componet/hook/UseRef";
+import ReactMemo from "./componet/hook/memo/Reactmemo";
 
 function App() {
   return (
     <div>
-      <UseMemo />
+      <ReactMemo />
     </div>
   );
 }
