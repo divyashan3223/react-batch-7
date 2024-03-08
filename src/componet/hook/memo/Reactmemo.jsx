@@ -4,6 +4,8 @@ import First, { Second, Third } from "./First";
 
 const Reactmemo = () => {
   const [count, setCount] = useState(0);
+  const [age, setAge] = useState(0);
+  console.log("parent");
   return (
     <div>
       <p>value:{count}</p>
@@ -14,9 +16,16 @@ const Reactmemo = () => {
       >
         change
       </button>
-      <First />
+      <button
+        onClick={() => {
+          setAge(age + 1);
+        }}
+      >
+        change age
+      </button>
+      <First count={count} />
       <Second />
-      <Third />
+      <Third age={age} />
     </div>
   );
 };
