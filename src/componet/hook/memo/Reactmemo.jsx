@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useState } from "react";
 import First, { Second, Third } from "./First";
 
@@ -6,15 +6,22 @@ const Reactmemo = () => {
   const [count, setCount] = useState(0);
   const [age, setAge] = useState(0);
   console.log("parent");
-  const person = useMemo(() => {
-    return {
-      name: "dinesh",
-      age: 22,
-    };
-  }, [count]);
+  // const person = useMemo(() => {
+  //    return{
+
+  //   name: "dinesh",
+  //   age: 22,
+
+  // }
+  // }, [count]);
+  const handleChange = useCallback(() => {
+    setAge(age + 1);
+  }, [age]);
+
   return (
     <div>
       <p>value:{count}</p>
+      <p>age:{age}</p>
       <button
         onClick={() => {
           setCount(count + 1);
@@ -31,7 +38,7 @@ const Reactmemo = () => {
       </button>
       <First count={count} />
       <Second />
-      <Third person={person} />
+      <Third handleChange={handleChange} />
     </div>
   );
 };
