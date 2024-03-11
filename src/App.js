@@ -1,10 +1,13 @@
 import "./App.css";
-import ReactMemo from "./componet/hook/memo/Reactmemo";
+import ParentComponet from "./componet/hook/UseContext";
+import ThemeChange, { Themebutton } from "./componet/hook/context/ThemeChage";
+// import Memo from "./componet/hook/memo/Memo";
+// import ReactMemo from "./componet/hook/memo/Reactmemo";
 
 function App() {
   return (
     <div>
-      <ReactMemo />
+      <ParentComponet user={"frenzo"} />
     </div>
   );
 }

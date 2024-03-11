@@ -7,6 +7,10 @@ export const Second = memo(() => {
   return <div>First</div>;
 });
 export const Third = memo(({ handleChange }) => {
-  return <div>person:{handleChange}</div>;
+  return (
+    <div>
+      <button onClick={handleChange}> child callback</button>
+    </div>
+  );
 });
 export default First;
