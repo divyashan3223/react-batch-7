@@ -1,6 +1,7 @@
 import { createContext, useContext, useState } from "react";
 // first step to create context in react
 let ThemeContext = createContext();
+
 const ThemeChange = ({ children }) => {
   const [theme, setTheme] = useState("light");
   const toggleChange = () => {
@@ -11,13 +12,14 @@ const ThemeChange = ({ children }) => {
   return (
     <ThemeContext.Provider value={contextValue}>
       {children}
+      <ThemeButton />
     </ThemeContext.Provider>
   );
 };
 
 export default ThemeChange;
 
-export const Themebutton = () => {
+export const ThemeButton = () => {
   const { theme, toggleChange } = useContext(ThemeContext);
 
   return (
